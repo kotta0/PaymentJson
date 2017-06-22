@@ -1,0 +1,8 @@
+package com.javatesttask.george.payment;
+
+public class HelloService {
+	public String sayHello(){
+		return "hello World from Rest";
+	}
+
+}

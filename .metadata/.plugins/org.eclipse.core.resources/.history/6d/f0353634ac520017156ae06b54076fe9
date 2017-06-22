@@ -1,0 +1,5 @@
+package com.georgetask.messageloader.model;
+
+public class Message {
+
+}

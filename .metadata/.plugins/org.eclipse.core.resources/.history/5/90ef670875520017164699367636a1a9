@@ -1,0 +1,21 @@
+package com.javatesttask.george.messenger.service;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.javatesttask.george.messenger.model.Message;
+
+public class MessageService {
+	
+ public List<Message> getAllMessages(){
+	
+	 Message m1 = new Message(1L,"Hello World","Joro");
+	 Message m2 = new Message(2L,"Hello Jersey","Kashik");
+	 Message m3 = new Message(3L,"Hello Java","Joro");
+	 List<Message> message = new ArrayList<>();
+	 message.add(m1);
+	 message.add(m2);
+	 message.add(m3);
+	 return message;
+	 
+ }
+}

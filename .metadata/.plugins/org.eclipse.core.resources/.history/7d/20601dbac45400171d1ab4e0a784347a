@@ -1,0 +1,29 @@
+package com.javatesttask.george.payment;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.javatesttask.george.messenger.model.Message;
+
+@Path("/payment")
+public class HelloService {
+	
+	
+	
+	@GET
+	@Path("/")
+	public String sayHello(){
+		return "hello World from Rest";
+	}
+
+	@GET
+	@Path("/{messageID}")
+	@Produces(MediaType.APPLICATION_JSON)
+    public String getMessage(@PathParam("messageId") String id){		
+		return id;
+	
+	}
+}

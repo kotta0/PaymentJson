@@ -1,0 +1,10 @@
+package com.javatesttask.george.payment;
+
+public class ClientPayment {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

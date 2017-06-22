@@ -1,0 +1,21 @@
+package com.javatesttask.george.payment;
+
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+
+public class ClientPayment {
+
+	public static void main(String[] args) {
+		
+		
+		Client c = Client.create();
+		WebResource resource= c.resource("http://sandbox-pay.jeton.com/merchant/initiate-payment");
+		String response = resource.get(String.class);
+		   ClientResponse result = resource.accept("application/json").get(ClientResponse.class);
+	        
+
+	}
+
+}

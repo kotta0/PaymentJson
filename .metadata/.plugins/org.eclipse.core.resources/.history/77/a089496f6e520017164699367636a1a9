@@ -1,0 +1,7 @@
+package com.javatesttask.george.messenger.service;
+import com.javatesttask.george.messenger.model.Message;
+
+public class MessageService {
+	
+
+}

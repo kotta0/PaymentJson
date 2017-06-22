@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello Page</title>
+</head>
+<body>
+	<h1>Check Out Payment</h1>
+	<form>
+	<input type="text" name="amount">
+	</input>
+	</form>
+</body>
+</html>

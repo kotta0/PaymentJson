@@ -1,0 +1,5 @@
+package com.javatesttask.george.messenger.model;
+
+public class Profile {
+
+}

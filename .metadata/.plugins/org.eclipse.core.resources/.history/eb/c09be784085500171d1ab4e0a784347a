@@ -1,0 +1,45 @@
+package com.javatesttask.george.payment;
+
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+
+public class ClientPayment {
+
+	public static void main(String[] args) {
+		
+		
+		Client c = Client.create();
+		WebResource resource= c.resource("http://sandbox-pay.jeton.com/merchant/initiate-payment");
+		String response = resource.get(String.class);
+		
+		
+		   ClientResponse result = resource.accept("application/json").get(ClientResponse.class);
+	        
+	        if (result.getStatus() == 200) {
+	        
+	            String body = result.getEntity(String.class);
+	            
+	            final JSONObject obj = (JSONObject)JSONValue.parse(body);
+	            
+	 
+	            if (obj != null && obj.get("balance") != null) {
+	                String balance = obj.get("balance").toString();
+	                out.println ("<p>Account balance: " + balance);
+	            }
+	            else {
+	                out.println("<p>Error while retrieving account balance.");
+	            }
+	        }
+	        
+	        else {
+	            out.println("<p>Error retrieving account balance: HTTP response status: " + result.getStatus());
+	        }
+	 
+	        out.println("</body></html>");
+	        
+	        out.close();
+	}
+
+}

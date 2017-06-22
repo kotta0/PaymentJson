@@ -1,0 +1,16 @@
+package com.javatesttask.george.payment;
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource;
+
+public class ClientPayment {
+
+	public static void main(String[] args) {
+		
+		
+		Client c = Client.create();
+		WebResource resource= c.resource("Type URL here");
+		String response = resource.get(String.class);
+	}
+
+}

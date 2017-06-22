@@ -1,0 +1,13 @@
+1495100319688	Move 'Welcome.jsp' to 'pages'
+1495100966911	Delete element
+1495101046223	Rename resource 'Web.xml'
+1495102373602	Move 'Welcome.jsp' to 'WEB-INF'
+1495102773352	Copy compilation unit
+1495102780413	Delete element
+1495108274972	Copy file
+1495108282520	Delete element
+1495110026659	Rename type 'StatelessBankOperations'
+1495110045126	Rename type 'StatelessBankOperationsImpl'
+1495111231409	Rename type 'StatefulBankOperations'
+1495111250115	Rename type 'StatefulBankOperationsImpl'
+1495112137459	Delete element

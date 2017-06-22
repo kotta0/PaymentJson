@@ -1,0 +1,16 @@
+package com.javatesttask.george.payment;
+
+import javax.ws.rs.Path;
+
+@Path("/payment")
+public class HelloService {
+	
+	
+	
+	@GET
+	@Path("/")
+	public String sayHello(){
+		return "hello World from Rest";
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.javatesttask.george.payment;
+
+public class PaymentMessage {
+
+}

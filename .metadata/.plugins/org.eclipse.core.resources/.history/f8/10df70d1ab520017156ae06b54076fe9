@@ -1,0 +1,5 @@
+package com.georgetask.messageloader.resources;
+
+public class MessageResource {
+
+}

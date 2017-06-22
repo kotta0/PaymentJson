@@ -1,0 +1,82 @@
+package com.javatesttask.george.payment;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+
+
+
+/**
+ * Servlet implementation class PaymentJsonServlet
+ */
+@WebServlet("/PaymentJsonServlet")
+public class PaymentJsonServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+
+	PaymentMessage paymentMessage;
+	
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public PaymentJsonServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("application/json");
+		PrintWriter writer= response.getWriter(); 
+		try {
+
+			Client client = Client.create();
+			WebResource webResource = client.resource("http://sandbox-pay.jeton.com/merchant/initiate-payment");
+			
+			//System.out.println(webResource.;
+			
+			String input = "{\"singer\":\"Metallica\",\"title\":\"Fade To Black\"}";
+			ClientResponse clientResponse = webResource.type("application/json").get(ClientResponse.class);
+
+			if (clientResponse.getStatus() != 201) {
+				throw new RuntimeException("Failed : HTTP error code : "
+				     + clientResponse.getStatus());
+			}
+
+			System.out.println("Output from Server .... \n");
+			String output = clientResponse.getEntity(String.class);
+			System.out.println(output);
+
+		  } catch (Exception e) {
+
+			e.printStackTrace();
+
+		  }
+		
+		
+		writer.println("helloFromServlet");
+		writer.flush();
+		writer.close();
+		doGet(request, response);
+	}
+
+}
